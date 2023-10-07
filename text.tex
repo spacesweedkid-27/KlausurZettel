@@ -1,0 +1,78 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts} 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titling}
+
+
+\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
+\newcommand*{\gedanke}{\textbf{-- }}
+
+
+\pagestyle{plain}
+\allowdisplaybreaks
+
+\setlength{\droptitle}{-14em}
+\setlength{\jot}{12pt}
+
+\title{Mathe B Klausurzettel}
+\author{Henri Paul Heyden \\ \small{stu240825}}
+\date{}
+
+\begin{document}
+\maketitle
+\subsubsection*{}
+Sei K Körper, zum Beispiel \(\mathbb R\).
+\subsubsection*{Analysis}
+\subsubsection*{Folgen}
+Folgen sind Funktionen aus \(K ^ {\mathbb{N}_\mu}\) für \(\mu \in \mathbb{N}\) als Startindex. \\
+Die Menge an Folgen nach \(K\) bezeichnen wir als \(\mathcal{S}(K)\)
+\subsubsection*{Umgebungen}
+Eine Umgebung von \(x\in K\) ist eine Menge an Intervallen, in denen \(x\) innerer Punkt ist. \\
+Eine Umgebung von \(x\) ist die Kugel mit Radius \(\delta \in K\): \(B(x, \delta) := (x-\delta, x+\delta)\). \\
+\(\mathcal{U}(x)\) ist die Menge aller Umgebungen um \(x\).
+\subsubsection*{Limes}
+Der Limes einer Folge ist die Zahl, für die nur endlich viele Umgebungen existieren, in denen keine Folgekomponenten liegen.\\
+Es gilt für eine Folge \((x_n)_n\):\\
+\(\lim_n x_n = p \in \overline{\mathbb{R}} \Longleftrightarrow \forall \epsilon > 0: \exists n_0: \forall n \ge n_0: |x_n - p| < \epsilon\) \\ \\
+Sandwichsatz für die Folge \((x_n)_n\):\\
+\(\exists a_n, b_n \in \mathcal{S}(\mathbb R): a_n \ge x_n \ge b_n \wedge p = \lim_{n} a_n = \lim_{n} b_n \Longrightarrow \lim_n x_n = p\) \\ \\
+Teilfolge: \\
+Ist \((x_n)_n\) Folge mit Limes \(p\), dann haben alle Folgen mit \(o \in \mathbb N ^ \mathbb N\) streng monoton steigend und \(a_n := x_{o(n)}\) Limes \(p\). \\ \\
+Kombinationssätze:\\
+1) \(\lim_n c \cdot x_n = c \cdot \lim_n x_n\) \\
+2) \(\lim_n (x_n + y_n) = \lim_n x_n + \lim_n y_n\) \\
+3) \(\lim_n x_n \cdot y_n = \lim_n x_n \cdot \lim_n y_n\) \\ \\
+Reihen \\
+Reihen sind Folgen über Folgen. Sei \((x_n) \in \mathcal{S}(\mathbb R)\).\\ Dann bezeichnen wir die Reihe über \((x_n)_\mu\) als \(\left(\sum_{k = \mu}^{n} x_k\right)_n\) \\ \\
+Wurzelkriterium:\\
+Sei \((x_n)_n\) Folge. Sei \(p = \lim_n \sqrt[n]{|x_n|}\) \\
+\(p < 1 \Longrightarrow \) die Reihe über \(x_n\) konvergiert absolut. \\
+\(p > 1 \Longrightarrow \) die Reihe über \(x_n\) divergiert. \\ \\
+Quotientenkriterium:\\
+Sei \((x_n)_n\) Folge. Sei \(p = \lim_n \lim_{n}|\frac{x_n}{x_{n-1}}|\) \\
+\(p < 1 \Longrightarrow \) die Reihe über \(x_n\) konvergiert absolut. \\
+\(p > 1 \Longrightarrow \) die Reihe über \(x_n\) divergiert. 
+
+\subsubsection*{Topologie}
+Wir bezeichnen \(x\) einen HP, wenn \(\exists a_n \in \mathcal{S}(\mathbb{R} \setminus \{x\}): \lim_{n} a_n = x\) gilt.
+\subsubsection*{Funktionslimes}
+Sei \(x\) HP von \(\Omega \subseteq \mathbb R\) und \(f \in \Omega ^ \mathbb R\). Dann bezeichnen wir den Funktionslimes von \(f\) in \(x\) als \(\lim_{n} f(z_n)\) für alle \(z_n \in \mathcal S (\Omega \setminus \{x\})\) mit Limes \(x\), wenn er existiert. \\
+Wir schreiben das dann auch: \(\lim_{z \rightarrow x} f(z)\). \\
+Die Kombinationssätze für den Limes gelten auch für den Funktionslimes.
+\subsubsection*{Stetigkeit}
+Wir nennen eine Funktion stetig in \(x\), wenn \(x\) kein HP ist,\\
+oder wenn \(\lim_{z \rightarrow x}f(z) = f(x)\) gilt. \\
+Stetigkeit von \(f\) in \(x\) ist äquivalent zu:\\
+\(\forall \epsilon > 0: \exists \delta > 0: \forall z \in B(x, \delta) \cap \Omega: f(z) \in B(f(x), \epsilon)\)
+\subsubsection*{Differenzierbarkeit}
+Sei \(\Omega \subseteq \mathbb R\). Wir nennen eine Funktion \(f \in \mathbb R^\Omega\) differenzierbar in einem HP \(x\), wenn gilt:
+\(\lim_{z\rightarrow x}\frac{f(z) - f(x)}{z - x} \in \mathbb R\). \\
+Differenzierbarkeit impliziert Stetigkeit. \\
+Somit sind rationale Funktionen und Polynome differenzierbar und stetig.
+\end{document}
