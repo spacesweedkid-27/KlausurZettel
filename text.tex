@@ -59,7 +59,7 @@ Sei \((x_n)_n\) Folge. Sei \(p = \lim_n \sqrt[n]{|x_n|}\) \\
 \(p < 1 \Longrightarrow \) die Reihe über \(x_n\) konvergiert absolut. \\
 \(p > 1 \Longrightarrow \) die Reihe über \(x_n\) divergiert. \\ \\
 Quotientenkriterium:\\
-Sei \((x_n)_n\) Folge. Sei \(p = \lim_n \lim_{n}|\frac{x_n}{x_{n-1}}|\) \\
+Sei \((x_n)_n\) Folge. Sei \(p = \lim_{n}|\frac{x_n}{x_{n-1}}|\) \\
 \(p < 1 \Longrightarrow \) die Reihe über \(x_n\) konvergiert absolut. \\
 \(p > 1 \Longrightarrow \) die Reihe über \(x_n\) divergiert. 
 \subsubsection*{Topologie}
@@ -91,4 +91,159 @@ Sei \(I\) echtes Intervall und \(f \in \mathbb R ^I\) in \(I_0\) differenzierbar
 2) \((\forall x \in I_0: f'(x) > 0) \Longrightarrow \) f ist streng monoton steigend. \\
 3) \((\forall x \in I_0: f'(x) < 0) \Longrightarrow \) f ist streng monoton fallend. \\ \\
 Wir bezeichnen \(LMAX(f), LMIN(f), LEXT(f)\) die Mengen an die Stellen der lokalen Maxima, lokalen Minima und Extremstellen.
+\subsection*{Lineare Algebra}
+\subsubsection*{Vektorraum}
+Wir nennen \(V\) Vektorraum über K, wenn gilt: \\
+\(\cdot : K \times V \rightarrow V\) ist Skalarmultiplikation mit Distributivgesetzen über einer komponentenweisen Addition \(+: V^2 \rightarrow V\). \\
+Ein wichtiger Vektorraum ist \(\mathbb R^n\) mit \(n \in \mathbb N_1\). Das additive neutrale Element ist \(0_{\mathbb R ^2}\) und das multiplikative neutrale Element ist \(1_\mathbb R\).
+\subsubsection*{Subraum und Aufspann}
+Eine Menge \(U \subseteq V\) nennen wir Subraum von \(V\), wenn gilt:\\
+1) \(0_V \in S \wedge\) \\
+2) \(v,w \in S: v + w \in S\) \\
+3) \(\forall \lambda \in K \forall v \in V: \lambda v \in S\). \\
+Wir schreiben dann auch \(U \le V\). \\ \\
+Wir definieren den Aufspann oder eine Linearkombination von einer Menge an Vektoren folgend:\\
+\(span: \mathcal P(V) \rightarrow \mathcal P(V), A \mapsto \left\{ \sum_{i=1}^{r} \lambda_i \cdot v_i \text{ }| \text{ } \lambda \in K^r \right\}\), wenn \(A\) genau \(r\) Vektoren enthält. \\
+Wenn die Vektoren nicht indiziert sind, schreibt man: \(span(A) := \left\{\sum_{v\in A}^{} \lambda(v) \cdot v \text{ }| \text{ } \lambda \in K^A \right\}\). \\
+Dann ist jeder Aufspann Subraum des Vektorraumes der Vektoren, von denen abgebildet wird. \\ \\
+Wir nennen \(U \subseteq V\) Erzeugendensystem, wenn \(span(U) = V\) gilt.
+\subsubsection*{Basis und Dimension}
+Ein unverkürzbares Erzeugendensystem, also ein Erzeugendensystem welchem man keinen Vektor nehmen kann nennen wir Basis. \\
+Für \(\mathbb R ^n\) gilt: \(|B| = n\), wenn \(B\) Basis von \(\mathbb R\) ist. \\ \\
+Eine Basis \(B\) ist immer linear unabhängig, das heißt es gilt:\\
+\(\forall \lambda \in K ^ B: \sum_{v \in B}^{} \lambda(v)\cdot v = 0 \Longrightarrow \lambda = 0\). \\
+Indizierte Schreibweise äquivalent. \\ \\
+Ein linear unabhängiges Erzeugendensystem ist eine Basis. \\
+Eine Basis von \(\mathbb R ^n\) ist die Standardbasis mit \(B = \{e^n_i\}_{i=1}^n\).\\
+Die Kardinalität einer Basis nennt man Dimension. \\ \\
+Sei \(S \le V\) mit \(dim(S) = dim(V)\), dann gilt: \(S = V\).
+\subsubsection*{Matrizen}
+Eine Matrix ist eine Funktion \(A \in K^{d \times n}\) mit \(d,n \in \mathbb N_1\). Wir sagen \(A\) hat dann \(d\) Zeilen und \(n\) Spalten. \\
+Dann schreibt man auch gerne \(A = \begin{bmatrix}
+    A_{1,1} & \hdots & A_{1,n} \\
+    \vdots & \ddots & \vdots \\
+    A_{d,1} & \hdots & A_{d,n}
+\end{bmatrix}\). Die Kommas muss man nicht schreiben.\\ \\
+Durch komponentenweise Addition und Skalarmultiplikation existiert der Vektorraum der Matrizen. \\
+Seien \(A \in K^{d \times n}, B \in K^{n \times p}\). Wir definieren die Matrixmultiplikation so für \(i \in [d]\) und \(j \in [p]\): \\
+\[(AB)_{ij} := \sum_{k = 1}^{n} A_{ik} \cdot B_{kj}\]
+Merke: Soto Uke dann Tetsui uke. Also: \(\rightarrow \downarrow\). \\
+Die Matrixmultiplikation ist assoziativ und es existiert ein Assoziativgesetz über die Skalarmultiplikation, jedoch ist sie nicht kommutativ. \\
+Des weiteren, existiert ein Distributivgesetz zur Addition.
+\subsubsection*{Lineare Abbildungen}
+Seinen V, W Vektorräume über K. Lineare Abbildungen sind \(\phi \in W^V\) sodass: \\
+1) \(\phi(x +_V y) = \phi(x) +_W \phi(y)\) \\
+2) \(\phi(\lambda \cdot_V x) = \lambda \cdot_W \phi(x)\) \\
+gelten. Die Menge aller linearen Abbildungen zwischen V und W nennen wir \(\mathcal L(V,W)\) \\ \\
+Matrizen ergeben lineare Abbildungen mit: \(\phi : K^n \rightarrow K^d, x \mapsto Ax\) \\ \\
+Wir definieren den Kern einer linearen Abbildung mit \(ker(\phi) := \phi^\leftarrow(0)\). \\
+Es gilt: \(dim(ker(\phi)) + dim(img(\phi)) = dim(V)\) \\ \\
+Eine Koordinatenabbildung einer Basis liefert für jeden Vektor im Aufspann Skalare für alle Basisvektoren, sodass der gewünschte Vektor sich ergibt: \\
+\(\forall v \in V: v = \sum_{i=1}^{n} \kappa_i^B(v)B_i\). \\
+Es gilt: \(\kappa^B(x) = A^{-1}x\), wenn die Spalten von \(A\) die Vektoren in B sind. \\ \\
+Wunschabbildung: \\
+Sei \(B\in V^n\) Basis von \(V\) und \(w \in W^n\). Dann gibt es genau ein \(\phi \in \mathcal L(V,W)\), sodass \(\phi(B_i) = w_i\) für alle \(i \in [n]\) gilt. \\
+Hierfür gilt dann: \(\phi: x\mapsto \sum_{i=1}^{n}\kappa_i^B(x)\cdot w_i\).
+\subsubsection*{Isomorphie}
+Eine lineare Abbildung nennen wir isomorph, wenn sie bijektiv ist. Dann gelten folgende Eigenschaften für \(\phi \in \mathcal{L}(V,W)\) isomorph, \(U \subseteq V\) endlich und \(S \subseteq V\):\\
+1) \(S \le V \Longleftrightarrow \phi^\rightarrow(S) \le W\) \\
+2) \(U\) ist linear unabhängig in V genau dann, wenn \(\phi^\rightarrow (U)\) linear unabhängig ist in W. \\
+3) \(U\) ist Erzeugendensystem in V genau dann, wenn \(\phi^\rightarrow (U)\) Erzeugendensystem in W.
+\subsubsection*{Raum und Rang}
+Wir definieren den Zeilenraum (\(ZR\)) von \(A\) als den Aufspann der Zeilenvektoren von \(A\)\\
+Wir definieren den Spaltenraum (\(SR\)) von \(A\) als den Aufspann der Spaltenvektoren von \(A\)\\
+Die Dimension der Spalten- und Zeilenräume sind gleich und wir nennen dies den Rang einer Matrix (\(rank(A)\)). \\ \\
+Dimensionsformel: \\
+Für \(A \in K^{d\times n}\) gilt: \(n = rank(A) + dim(ker(A))\) \\ \\
+\(A\) ist injektiv genau dann, wenn \(rank(A) = n\) \\
+\(A\) ist surjektiv auf \(K^d\) genau dann, wenn \(rank(A) = d\) \\
+\(A\) ist bijektiv zwischen \(K^n\) und \(K^d\) genau dann, wenn \(rank(A) = d = n\)
+\subsubsection*{Lineare Gleichungssysteme}
+Wir schreiben \((A|b)\) für ein LGS mit \(Ax = b\), also \(x \in K^n\) als die Unbekannten, \(A \in K^{d \times n}\) als die Koeffizienten und \(b \in K^d\) als dem Ergebnis.\\ \\
+Ist \(u \in K^n\) eine Lösung von \((A,b)\), dann gilt: \(L(A,b) = u + ker(A)\). \\ \\
+Elementare Zeilenumformungen: \\
+1) Vertauschen zweier Zeilen \\
+2) Multiplikation einer Zeile mit einem Skalar ungleich Null \\
+3) Addition eines skalaren Vielfachen einer Zeile zu einer anderen Zeile\\ \\
+Elementare Zeilenumformungen verändern Kern und Lösungsmenge nicht. \\
+\subsubsection*{Kanonische Zeilenstufenform}
+Für \(r,k \in \mathbb N\) sieht die kanonische Zeilenstufenform so aus:\\
+\(\begin{bmatrix}
+    1 &  &  & 0 & s_{11} & \hdots & \hdots & \hdots & s_{1k} & b_1 \\
+     & \ddots & 0 &  & \vdots & & & & \vdots & \vdots \\
+     & 0 & \ddots &  & \vdots & & & & \vdots & \vdots \\
+    0 &  &  & 1 & s_{r1} & \hdots & \hdots & \hdots & s_{rk} & b_r \\
+    0 & & & & & & & & 0 & b_{r+1} \\
+    \vdots & & & & & & & & \vdots & \vdots \\
+    0 & & & & & & & & 0 & b_{d}
+\end{bmatrix}\) \\ \\
+Man kann ablesen: \(rank(A) = r\) und \(dim(ker(A)) = k\) \\ \\
+Gilt \(\exists i > r: b_i \ne 0\) ist das Gleichungssystem nicht lösbar. \\ \\
+Wurde die kanonische Zeilenstufenform erreicht mit Spaltentauschen, müssen diese Rückgängig gemacht werden bevor man Kernbasis und Lösung konstruiert. \\ \\ \\
+Folgender Vektor bildet eine Lösung des LGS \(A'|b'\): \\
+\(u := \begin{bmatrix}
+    b_1 \\
+    \vdots \\
+    b_r \\
+    0 \\
+    \vdots \\
+    0
+\end{bmatrix} \in K^n\)
+\\ \\
+Die Spalten der folgenden Matrix bilden eine Basis von \(ker(A')\): \\
+\(B := \begin{bmatrix}
+    -s_{11} & \hdots & -s_{1k} \\
+    \vdots & & \vdots \\
+    -s_{r1} & \hdots & -s_{rk} \\
+    1 & & 0 \\
+    & \ddots & \\
+    0 & & 1
+\end{bmatrix} \in K^{n \times k}\) (Beachte \(n = r + k\)) \\ \\
+\subsubsection*{Erreichen der Kanonischen Zeilenstufenform}
+Kümmere dich erst um den ersten Spaltenvektor von \(A|b\), sodass dieser gleich 1 ist in der ersten Komponente und dann nur noch Nullen folgen. Dann repetiere dies für die nächste Spalte mit der Null einen weiter runter. Es ist egal, wie die Komponenten rechts aussehen, es ist nur wichtig, dass die Komponenten unter und über der Eins Null sind. Das Ziel ist schließlich nicht die Standardbasis, sondern die kanonische Zeilenstufenform.
+\subsubsection*{Lineare Unabhängigkeit prüfen}
+Um die lineare Unabhängigkeit eines Erzeugendensystem zu überprüfen, kann man die Vektoren spaltenweise eintragen, sodass der Spaltenraum gleich des Aufspannes des Erzeugendensystems ist und dann die Matrix auf kanonische Zeilenstufenform bringen und den Rang ablesen und überprüfen ob dieser der Kardinalität der Vektoren im Erzeugendensystem gleicht.
+\subsubsection*{Inverses}
+Um das Inverse einer Matrix zu berechnen, muss man sie \textbf{ohne} Spaltentausche auf die Einheitsmatrix umformen währenddessen man diese Operationen auf eine Einheitsmatrix ausführt. Nur quadratische Matrizen sind invertierbar.
+\subsubsection*{Determinante}
+Die Determinantenform definieren wir für alle \(i \in [n]\) als
+\[{\det_i}: K^{n \times n} \rightarrow K, A \mapsto \begin{cases}
+    A_{11} & \text{wenn } n = 1 \\
+    \sum_{j = 1}^{n} (-1)^{i+j}\cdot A_{ij} \cdot \det_i(A^{ij}) & \text{wenn } n \ge 2 )
+\end{cases}\]
+Die Determinantenform hat folgende Eigenschaften: \\
+1) det ist linear in jeder Spalte, d.h. es gilt:\\
+\(\det(\begin{bmatrix}
+        v_1 & \hdots & v_{r-1} & v_r + w & v_{r+1} & \hdots & v_n
+\end{bmatrix}) = \det(\begin{bmatrix}
+    v_1 & \hdots & v_n
+\end{bmatrix}) + \det(\begin{bmatrix}
+    v_1 & \hdots & v_{r-1} & w & v_{r+1} & \hdots & v_n
+\end{bmatrix})\) und \(\det(\begin{bmatrix}
+    v_1 & \hdots & v_{r-1} & \lambda \cdot v_r & v_{r+1} & \hdots & v_n
+\end{bmatrix}) = \lambda \cdot \det(\begin{bmatrix}
+    v_1 & \hdots & v_n
+\end{bmatrix})\) \\
+2) det ist alternierend, d.h. \(\det(A) = 0\) für ein \(A\) mit zwei gleichen Spalten. \\
+3) det ist normiert, d.h. \(\det(I_n) = 1\) \\
+4) \(\det(A) = -\det(A')\), wenn \(A'\) durch einen Spaltentausch von \(A\) hervorgeht. \\
+5) Für singuläre Matrizen also nicht invertierbare Matrizen \(A\) gilt: \(\det(A) = 0\) \\
+6) \(\det \begin{bmatrix}
+    a & b \\
+    c & d
+\end{bmatrix} = ad - cb\) \\
+7) \(\det \begin{bmatrix}
+    a & b & c \\
+    d & e & f \\
+    g & h & i
+\end{bmatrix} = a(ei - hf) - b(di - gf) + c(dh - ge)\) \\
+8) \(\det(AB) = \det(A) \cdot \det(B)\)
+\subsubsection*{Charakteristisches Polynom}
+Wir definieren das charakteristische Polynom einer Matrix \(A \in K^{n\times n}\) mit\\
+\(char_A : K \rightarrow K, x \mapsto \det(A - xI_n)\) \\
+Es gilt \(\sigma(A) = \{\lambda \in K \text{ }|\text{ } char_A(\lambda) = 0\}\), also sind die EW von \(A\) gleich den Nullstellen seines charakteristischen Polynoms. \\
+\subsubsection*{Eigenwerte und Eigenraum berechnen}
+Nun ergibt sich folgende Methode:\\
+1.: Bestimme die Nullstellen von \(char_A\). \\
+2.: Für jeden EW \(\lambda\) bestimme eine Basis von \(ker(A - \lambda I_n)\), wie zum Beispiel über die kanonische Zeilenstufenform.
 \end{document}
