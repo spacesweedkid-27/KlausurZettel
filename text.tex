@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass{article}
 
 \usepackage[ngerman]{babel} 
 \usepackage[T1]{fontenc}
@@ -18,7 +18,12 @@
 \allowdisplaybreaks
 
 \setlength{\droptitle}{-14em}
-\setlength{\jot}{12pt}
+%\setlength{\jot}{12pt}
+\setlength{\hoffset}{-3cm}
+\setlength{\voffset}{-1cm}
+\setlength{\textheight}{674pt}
+\setlength{\textwidth}{426pt}
+
 
 \title{Mathe B Klausurzettel}
 \author{Henri Paul Heyden \\ \small{stu240825}}
@@ -26,9 +31,8 @@
 
 \begin{document}
 \maketitle
-\subsubsection*{}
 Sei K Körper, zum Beispiel \(\mathbb R\).
-\subsubsection*{Analysis}
+\subsection*{Analysis}
 \subsubsection*{Folgen}
 Folgen sind Funktionen aus \(K ^ {\mathbb{N}_\mu}\) für \(\mu \in \mathbb{N}\) als Startindex. \\
 Die Menge an Folgen nach \(K\) bezeichnen wir als \(\mathcal{S}(K)\)
@@ -41,7 +45,7 @@ Der Limes einer Folge ist die Zahl, für die nur endlich viele Umgebungen existi
 Es gilt für eine Folge \((x_n)_n\):\\
 \(\lim_n x_n = p \in \overline{\mathbb{R}} \Longleftrightarrow \forall \epsilon > 0: \exists n_0: \forall n \ge n_0: |x_n - p| < \epsilon\) \\ \\
 Sandwichsatz für die Folge \((x_n)_n\):\\
-\(\exists a_n, b_n \in \mathcal{S}(\mathbb R): a_n \ge x_n \ge b_n \wedge p = \lim_{n} a_n = \lim_{n} b_n \Longrightarrow \lim_n x_n = p\) \\ \\
+\((\exists a_n, b_n \in \mathcal{S}(\mathbb R): a_n \ge x_n \ge b_n \wedge p = \lim_{n} a_n = \lim_{n} b_n) \Longrightarrow \lim_n x_n = p\) \\ \\
 Teilfolge: \\
 Ist \((x_n)_n\) Folge mit Limes \(p\), dann haben alle Folgen mit \(o \in \mathbb N ^ \mathbb N\) streng monoton steigend und \(a_n := x_{o(n)}\) Limes \(p\). \\ \\
 Kombinationssätze:\\
@@ -58,7 +62,6 @@ Quotientenkriterium:\\
 Sei \((x_n)_n\) Folge. Sei \(p = \lim_n \lim_{n}|\frac{x_n}{x_{n-1}}|\) \\
 \(p < 1 \Longrightarrow \) die Reihe über \(x_n\) konvergiert absolut. \\
 \(p > 1 \Longrightarrow \) die Reihe über \(x_n\) divergiert. 
-
 \subsubsection*{Topologie}
 Wir bezeichnen \(x\) einen HP, wenn \(\exists a_n \in \mathcal{S}(\mathbb{R} \setminus \{x\}): \lim_{n} a_n = x\) gilt.
 \subsubsection*{Funktionslimes}
@@ -71,8 +74,21 @@ oder wenn \(\lim_{z \rightarrow x}f(z) = f(x)\) gilt. \\
 Stetigkeit von \(f\) in \(x\) ist äquivalent zu:\\
 \(\forall \epsilon > 0: \exists \delta > 0: \forall z \in B(x, \delta) \cap \Omega: f(z) \in B(f(x), \epsilon)\)
 \subsubsection*{Differenzierbarkeit}
-Sei \(\Omega \subseteq \mathbb R\). Wir nennen eine Funktion \(f \in \mathbb R^\Omega\) differenzierbar in einem HP \(x\), wenn gilt:
-\(\lim_{z\rightarrow x}\frac{f(z) - f(x)}{z - x} \in \mathbb R\). \\
+Sei \(\Omega \subseteq \mathbb R\). Wir nennen eine Funktion \(f \in \mathbb R^\Omega\) differenzierbar in einem HP \(x\),\\
+wenn gilt: \(\lim_{z\rightarrow x}\frac{f(z) - f(x)}{z - x} \in \mathbb R\). \\
 Differenzierbarkeit impliziert Stetigkeit. \\
-Somit sind rationale Funktionen und Polynome differenzierbar und stetig.
+Somit sind rationale Funktionen und Polynome differenzierbar und stetig. \\ \\
+Kombinationssätze für Differenzierbarkeit: \\
+1) \((c\cdot f')(x) = c\cdot f'(x)\) \\
+2) \((f + g)'(x) = f'(x) + g'(x)\) \\
+3) \((f\cdot g)'(x) = f'(x)\cdot g(x) + f(x)\cdot g'(x)\) \\
+4) \(\left(\frac{1}{f}\right)'(x) = \frac{-f'(x)}{f(x)^2}\) \\
+5) \(\left(\frac{f}{g}\right)'(x) = \frac{f'(x)\cdot g(x) - f(x) \cdot g'(x)}{g(x)^2}\) \\ \\
+Kettenregel: \((g \circ f)'(x) = g'(f(x))\cdot f'(x)\)
+\subsubsection*{Monotonie und lokale Extremstellen}
+Sei \(I\) echtes Intervall und \(f \in \mathbb R ^I\) in \(I_0\) differenzierbar. Dann gilt:\\
+1) \((\forall x \in I_0: f'(x) = 0) \Longleftrightarrow \) f ist konstant. \\
+2) \((\forall x \in I_0: f'(x) > 0) \Longrightarrow \) f ist streng monoton steigend. \\
+3) \((\forall x \in I_0: f'(x) < 0) \Longrightarrow \) f ist streng monoton fallend. \\ \\
+Wir bezeichnen \(LMAX(f), LMIN(f), LEXT(f)\) die Mengen an die Stellen der lokalen Maxima, lokalen Minima und Extremstellen.
 \end{document}
